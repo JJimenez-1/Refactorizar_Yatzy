@@ -1,10 +1,10 @@
 class Yatzy:
 
     @staticmethod
-    def chance(*dados):
+    def chance(*dice):
         total = 0
-        for numero in dados:
-            total += numero
+        for number in dice:
+            total += number
         return total
 
     @staticmethod
