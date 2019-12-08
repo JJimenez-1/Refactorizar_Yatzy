@@ -17,7 +17,7 @@ class Yatzy:
     def ones(*dice):
         ONE = 1
         return dice.count(ONE) * ONE
- 
+
 
     @staticmethod
     def twos( d1,  d2,  d3,  d4,  d5):
