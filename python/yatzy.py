@@ -39,14 +39,11 @@ class Yatzy:
         FIVES = 5
         return dice.count(FIVES) * FIVES
 
+    @staticmethod
+    def sixes(*dice):
+        SIXES = 6
+        return dice.count(SIXES) * SIXES
 
-    def sixes(self):
-        sum = 0
-        for at in range(len(self.dice)): 
-            if (self.dice[at] == 6):
-                sum = sum + 6
-        return sum
-    
     @staticmethod
     def score_pair( d1,  d2,  d3,  d4,  d5):
         counts = [0]*6
