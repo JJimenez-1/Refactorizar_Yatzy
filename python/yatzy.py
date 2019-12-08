@@ -33,8 +33,8 @@ class Yatzy:
     def fours(*dice):
         FOUR = 4
         return dice.count(FOUR) * FOUR
-    
 
+    @staticmethod
     def fives(self):
         s = 0
         i = 0
