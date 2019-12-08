@@ -29,13 +29,10 @@ class Yatzy:
         THREE = 3
         return dice.count(THREE) * THREE
 
-
-    def fours(self):
-        sum = 0
-        for at in range(5):
-            if (self.dice[at] == 4): 
-                sum += 4
-        return sum
+    @staticmethod
+    def fours(*dice):
+        FOUR = 4
+        return dice.count(FOUR) * FOUR
     
 
     def fives(self):
