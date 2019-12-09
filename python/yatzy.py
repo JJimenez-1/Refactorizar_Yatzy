@@ -121,28 +121,27 @@ class Yatzy:
         if lista == []:
             return 0
         else:
-            lista.sort()
-            suma_num_lista = 0
-            for numero in lista:
-                suma_num_lista = suma_num_lista + numero
-            return suma_num_lista
+            return 15
 
     @staticmethod
-    def largeStraight( d1,  d2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-        if (tallies[1] == 1 and
-            tallies[2] == 1 and
-            tallies[3] == 1 and
-            tallies[4] == 1
-            and tallies[5] == 1):
+    def largeStraight(*dice):
+        LARGEST = 1
+        lista = []
+        for die in dice:
+            if die == LARGEST:
+                return 0
+            if dice.count(die) == LARGEST:
+                if lista.count(die) == LARGEST:
+                    lista.append(die)
+                else:
+                    continue
+            else:
+                return 0
+
+        if lista == []:
+            return 0
+        else:
             return 20
-        return 0
-    
 
     @staticmethod
     def fullHouse( d1,  d2,  d3,  d4,  d5):
