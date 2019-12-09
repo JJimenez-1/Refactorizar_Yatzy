@@ -91,16 +91,19 @@ class Yatzy:
 
     @staticmethod
     def four_of_a_kind(*dice):
-        tallies = [0]*6
-        tallies[_1-1] += 1
-        tallies[_2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-        for i in range(6):
-            if (tallies[i] >= 4):
-                return (i+1) * 4
-        return 0
+        FOUR_KIND = 4
+        lista = []
+        for die in dice:
+            if dice.count(die) >= FOUR_KIND:
+                if lista.count(die) == 0:
+                    lista.append(die)
+                else:
+                    continue
+
+        if lista == []:
+            return 0
+        else:
+            return lista[-1] * FOUR_KIND
  
 
     @staticmethod
