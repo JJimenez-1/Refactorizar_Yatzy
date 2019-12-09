@@ -82,10 +82,10 @@ def test_smallStraight():
 
 
 def test_largeStraight():
-        assert 20 == Yatzy.largeStraight(6,2,3,4,5)
-        assert 20 == Yatzy.largeStraight(2,3,4,5,6)
-        assert 0 == Yatzy.largeStraight(1,2,2,4,5)
-  
+        assert 20 == Yatzy.largeStraight(6, 2, 3, 4, 5)
+        assert 20 == Yatzy.largeStraight(2, 3, 4, 5, 6)
+        assert 0 == Yatzy.largeStraight(1, 2, 2, 4, 5)
+
 
 def test_fullHouse():
         assert 18 == Yatzy.fullHouse(6,2,2,2,6)
