@@ -44,7 +44,7 @@ class Yatzy:
         return dice.count(SIXES) * SIXES
 
     @staticmethod
-    def score_pair(*dice):
+    def one_pair(*dice):
         ONE_PAIR = 2
         lista = []
         for die in dice:
