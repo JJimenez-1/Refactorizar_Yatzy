@@ -131,7 +131,7 @@ class Yatzy:
             if die == LARGEST:
                 return 0
             if dice.count(die) == LARGEST:
-                if lista.count(die) == LARGEST:
+                if lista.count(die) == 0:
                     lista.append(die)
                 else:
                     continue
@@ -144,34 +144,22 @@ class Yatzy:
             return 20
 
     @staticmethod
-    def fullHouse( d1,  d2,  d3,  d4,  d5):
-        tallies = []
-        _2 = False
-        i = 0
-        _2_at = 0
-        _3 = False
-        _3_at = 0
+    def fullHouse(*dice):
+        TWO_KIND = 2
+        THREE_KIND = 3
+        lista = []
+        suma_num_lista = 0
+        for die in dice:
+            if dice.count(die) == TWO_KIND or dice.count(die) == THREE_KIND:
+                if lista.count(die) == 0:
+                    lista.append(die)
+                else:
+                    continue
+            else:
+                return 0
 
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-
-        for i in range(6):
-            if (tallies[i] == 2): 
-                _2 = True
-                _2_at = i+1
-            
-
-        for i in range(6):
-            if (tallies[i] == 3): 
-                _3 = True
-                _3_at = i+1
-            
-
-        if (_2 and _3):
-            return _2_at * 2 + _3_at * 3
-        else:
+        if lista == []:
             return 0
+        else:
+            lista.sort()
+            return (lista[0] * dice.count(lista[0])) + (lista[-1] * dice.count(lista[-1]))
