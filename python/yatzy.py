@@ -104,24 +104,28 @@ class Yatzy:
             return 0
         else:
             return lista[-1] * FOUR_KIND
- 
 
     @staticmethod
-    def smallStraight( d1,  d2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-        if (tallies[0] == 1 and
-            tallies[1] == 1 and
-            tallies[2] == 1 and
-            tallies[3] == 1 and
-            tallies[4] == 1):
-            return 15
-        return 0
-    
+    def smallStraight(*dice):
+        SMALLEST = 1
+        lista = []
+        for die in dice:
+            if dice.count(die) == SMALLEST:
+                if lista.count(die) == 0:
+                    lista.append(die)
+                else:
+                    continue
+            else:
+                return 0
+
+        if lista == []:
+            return 0
+        else:
+            lista.sort()
+            suma_num_lista = 0
+            for numero in lista:
+                suma_num_lista = suma_num_lista + numero
+            return suma_num_lista
 
     @staticmethod
     def largeStraight( d1,  d2,  d3,  d4,  d5):
