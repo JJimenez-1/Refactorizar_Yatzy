@@ -58,25 +58,21 @@ class Yatzy:
             return lista[-1] * ONE_PAIR
 
     @staticmethod
-    def two_pair( d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        n = 0
-        score = 0
-        for i in range(6):
-            if (counts[6-i-1] >= 2):
-                n = n+1
-                score += (6-i)
-                    
-        if (n == 2):
-            return score * 2
-        else:
+    def two_pair(*dice):
+        TWO_PAIR = 2
+        lista = []
+        for die in dice:
+            if dice.count(die) >= TWO_PAIR:
+                if lista.count(die) == 0:
+                    lista.append(die)
+                else:
+                    continue
+
+        if lista == [] or len(lista) == 1:
             return 0
-    
+        else:
+            return (lista[0] * TWO_PAIR) + (lista[-1] * TWO_PAIR)
+
     @staticmethod
     def four_of_a_kind( _1,  _2,  d3,  d4,  d5):
         tallies = [0]*6

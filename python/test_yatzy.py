@@ -56,11 +56,11 @@ def test_one_pair():
         assert 12 == Yatzy.one_pair(5, 3, 6, 6, 5)
 
 
-def test_two_Pair():
-        assert 16 == Yatzy.two_pair(3,3,5,4,5)
-        assert 18 == Yatzy.two_pair(3,3,6,6,6)
-        assert 0 == Yatzy.two_pair(3,3,6,5,4)
-  
+def test_two_pair():
+        assert 16 == Yatzy.two_pair(3, 3, 5, 4, 5)
+        assert 18 == Yatzy.two_pair(3, 3, 6, 6, 6)
+        assert 0 == Yatzy.two_pair(3, 3, 6, 5, 4)
+
 
 def test_three_of_a_kind():
         assert 9 == Yatzy.three_of_a_kind(3,3,3,4,5)
