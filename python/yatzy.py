@@ -114,7 +114,7 @@ class Yatzy:
             return lista[-1] * FOUR_KIND
 
     @staticmethod
-    def smallStraight(*dice):
+    def small_straight(*dice):
         SMALLEST = 1
         lista = []
         for die in dice:
@@ -132,7 +132,7 @@ class Yatzy:
             return 15
 
     @staticmethod
-    def largeStraight(*dice):
+    def large_straight(*dice):
         LARGEST = 1
         lista = []
         for die in dice:
@@ -152,7 +152,7 @@ class Yatzy:
             return 20
 
     @staticmethod
-    def fullHouse(*dice):
+    def full_house(*dice):
         TWO_KIND = 2
         THREE_KIND = 3
         lista = []
